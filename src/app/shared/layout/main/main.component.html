@@ -1,0 +1,52 @@
+<div class="main-container">
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      (click)="sidenav.toggle()"
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span style="margin-right: 15px">Moonfire nvr</span>
+    <button routerLink="/records" mat-button>Records</button>
+    <button routerLink="/live" mat-button>Live</button>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="container">
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      opened
+      class="sidenav"
+      [fixedInViewport]="options.value.fixed"
+      [fixedTopGap]="options.value.top"
+      [fixedBottomGap]="options.value.bottom"
+    >
+      {{ options.value.fixed ? 'Fixed' : 'Non-fixed' }} Sidenav
+    </mat-sidenav>
+
+    <mat-sidenav-content [formGroup]="options">
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <mat-toolbar class="example-footer" color="primary">Footer</mat-toolbar>
+</div>

@@ -6,8 +6,11 @@
     "moonfire-nvr-ui": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular/material": {
+          "style": "scss"
+        },
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -32,6 +35,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.sass"
             ],
             "scripts": [],
@@ -103,13 +107,26 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.sass"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "moonfire-nvr-ui"
+  "defaultProject": "moonfire-nvr-ui",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

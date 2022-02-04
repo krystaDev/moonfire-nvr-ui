@@ -1,0 +1,24 @@
+.sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .container {
+    flex: 1;
+  }
+}
