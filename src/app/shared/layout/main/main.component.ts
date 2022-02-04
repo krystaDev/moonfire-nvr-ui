@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
